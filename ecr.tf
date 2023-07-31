@@ -1,5 +1,6 @@
 resource "aws_ecr_repository" "ecr_repo" {
-  name = "vickeywu/ecr_repo"
+  provider = aws.hk
+  name     = "vickeywu/ecr_repo"
 }
 
 data "aws_iam_policy_document" "allow_pull_policy" {
