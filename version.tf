@@ -16,7 +16,8 @@ terraform {
 provider "aws" {
   # access_key = "my-access-key"
   # secret_key = "my-secret-key"
-  region = "ap-east-1"
+  # region = "ap-east-1"
+  region = var.region
   alias  = "hk"
 }
 

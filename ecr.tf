@@ -1,6 +1,12 @@
 resource "aws_ecr_repository" "ecr_repo" {
   provider = aws.hk
   name     = "vickeywu/ecr_repo"
+  # for_each = "all repos"
+  # image_tag_mutability = "MUTABLE"
+
+  # image_scanning_configuration {
+  #   scan_on_push = true
+  # }
 }
 
 data "aws_iam_policy_document" "allow_pull_policy" {
@@ -32,7 +38,7 @@ data "aws_iam_policy_document" "allow_pull_policy" {
   }
 }
 
-resource "aws_ecr_repository_policy" "foopolicy" {
+resource "aws_ecr_repository_policy" "allow_pull_policy" {
   repository = aws_ecr_repository.ecr_repo.name
   policy     = data.aws_iam_policy_document.allow_pull_policy.json
 }
