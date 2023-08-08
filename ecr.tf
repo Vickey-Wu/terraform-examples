@@ -42,3 +42,12 @@ resource "aws_ecr_repository_policy" "allow_pull_policy" {
   repository = aws_ecr_repository.ecr_repo.name
   policy     = data.aws_iam_policy_document.allow_pull_policy.json
 }
+
+import {
+  for_each = toset( ["gsol/testrepo", "gsol/testrepo1", "Alice", "Dottie"] )
+
+  to = aws_ecr_repository_policy[each.key]
+  id = each.key
+}
+
+
