@@ -21,12 +21,48 @@ variable "object_var" {
   })
 }
 
-variable "subnet_id_1" {
+variable "private_subnet_1a" {
   type    = string
-  default = "subnet-your_first_subnet_id"
+  default = "subnet-xxxxxx"
 }
 
-variable "subnet_id_2" {
+variable "private_subnet_1b" {
   type    = string
-  default = "subnet-your_second_subnet_id"
+  default = "subnet-xxxxxx"
+}
+
+variable "eks_cluster_name" {
+  type    = string
+  default = "bcp"
+}
+
+variable "eks_node_group_name" {
+  type    = string
+  default = "worker-group"
+}
+
+variable "eks_cluster_role_arn" {
+  type    = string
+  default = "arn:aws:iam::xxxxxx:role/EKS-Cluster-Role"
+}
+
+variable "eks_worker_role_arn" {
+  type    = string
+  default = "arn:aws:iam::xxxxxxx:role/EKS-Workers-Role"
+}
+
+variable "eks_worker_instance_type" {
+  type    = string
+  #default = "t3.xlarge"
+  default = "t3.medium"
+}
+
+variable "eks_cluster_sg" {
+  type    = string
+  default = "sg-xxxxxx"
+}
+
+variable "ElastiCache_sg" {
+  type    = string
+  default = "sg-xxxxx"
 }
