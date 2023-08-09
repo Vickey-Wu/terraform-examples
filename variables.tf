@@ -57,12 +57,22 @@ variable "eks_worker_instance_type" {
   default = "t3.medium"
 }
 
+variable "eks_node_group_supplier" {
+  type    = string
+  default = "xxxxxxx"
+}
+
 variable "eks_cluster_sg" {
   type    = string
   default = "sg-xxxxxx"
 }
 
-variable "ElastiCache_sg" {
+variable "ec2_key_pair" {
   type    = string
-  default = "sg-xxxxx"
+  default = "xxxxxx"
+}
+
+variable "eks_worker_ssh_sg" {
+  type    = string
+  default = "sg-xxxxxx"
 }
