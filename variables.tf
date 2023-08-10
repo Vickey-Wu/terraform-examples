@@ -36,9 +36,9 @@ variable "eks_cluster_name" {
   default = "bcp"
 }
 
-variable "eks_node_group_name" {
+variable "eks_node_group_www" {
   type    = string
-  default = "worker-group"
+  default = "worker-group-www"
 }
 
 variable "eks_cluster_role_arn" {
