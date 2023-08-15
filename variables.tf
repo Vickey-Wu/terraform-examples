@@ -76,3 +76,18 @@ variable "eks_worker_ssh_sg" {
   type    = string
   default = "sg-xxxxxx"
 }
+
+variable "nacos_cluster_sg" {
+  type    = string
+  default = "sg-xxxxxx"
+}
+
+variable "nacos_cluster_acm_arn" {
+  type    = string
+  default = "arn:aws:acm:ap-east-1:xxxxxxxxxxxx:certificate/xxxxxxxxx"
+}
+
+variable "nacos_cluster_instance_ip" {
+  type    = list(any)
+  default = ["10.xxxxx", "10.xxxxx", "10.xxxxx"]
+}
