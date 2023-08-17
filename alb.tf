@@ -31,6 +31,17 @@ resource "aws_lb_listener" "nacos-cluster-nlb-listener-80" {
   }
 }
 
+resource "aws_lb_listener" "nacos-cluster-nlb-listener-8848" {
+  load_balancer_arn = aws_lb.nacos-cluster-nlb.arn
+  port              = "8848"
+  protocol          = "HTTP"
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.nacos-cluster-tg.arn
+  }
+}
+
 resource "aws_lb_target_group" "nacos-cluster-tg" {
   name        = "nacos-cluster-tg"
   port        = 8848
